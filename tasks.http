@@ -1,0 +1,37 @@
+GET localhost:8888/api/tasks
+Accept: application/json
+###
+GET localhost:8888/api/tasks/1
+Accept: application/json
+###
+POST localhost:8888/api/tasks
+Content-Type: application/json
+
+{
+"title":"Test3",
+"description":"Testowanie API rest"
+}
+###
+DELETE localhost:8888/api/tasks/1
+###
+PUT localhost:8888/api/tasks/2
+Content-Type: application/json
+
+{
+"title":"Inne zadanie",
+"description":"Test"
+}
+###
+GET localhost:8888/api/tasks/1/attachments
+###
+GET localhost:8888/api/tasks/1/attachments/77041150-e311-423f-97c5-75de55aacafc
+###
+POST localhost:8888/api/tasks/1/attachments
+Content-Type: multipart/form-data; boundary=Tasker
+
+--Tasker
+Content-Disposition: form-data; name="file"; filename="testfile.txt"
+
+< C:\Java\Projects\tasker\testfile.txt
+--Tasker
+###
